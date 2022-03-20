@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:UICFOODAPP.ViewModels" 
+             xmlns:vm1="clr-namespace:UICFOODAPP.Views"
+             x:Class="UICFoodOrderApp.Views.LoginView">
+    <ContentPage.BindingContext>
+        <vm1:LoginViewModel/>
+    </ContentPage.BindingContext>
+            
+    <ContentPage.Content>
+        <Grid Padding="20" VerticalOptions="Center" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" VerticalOptions="Center">
+                <Image Source="https://www.healthylivingshows.com/wp-content/uploads/2022/01/uic-logo.png" 
+                       WidthRequest="200" HeightRequest="100"/>
+                <Label Text="Login Form" FontFamily="Font1B"
+                       TextColor="Black" FontSize="40" HorizontalOptions="Center"/>
+               
+            </StackLayout>
+            <StackLayout Grid.Row="1" Spacing="10">
+                <Entry Placeholder="Enter Username" Text="{Binding Username}"/>
+                <Entry Placeholder="Enter Password" Text="{Binding Password}" IsPassword="True"/>
+
+                <Button Text="Login" HorizontalOptions="Center" BackgroundColor="#04EBFB"
+                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                       Command="{Binding LoginCommand}"
+                        />
+                <Label Text="New User :"/>
+                <Button Text="Register" HorizontalOptions="Center" BackgroundColor="Black"
+                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                        Command="{Binding RegisterCommand}"
+                        />
+                
+            </StackLayout>
+
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
